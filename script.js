@@ -47,11 +47,13 @@ document.querySelector('.no-button').addEventListener('click', handleNoClick);
 document.querySelector('.yes-button').addEventListener('click', handleYesClick);
 
 
-if (/Mobi|Android|iPhone|Windows Phone/i.test(navigator.userAgent)) {
-    document.body.innerHTML = "<h1>Access from mobile devices is restricted.</h1>";
-} else {
-    // Normal content for desktop users will be displayed
-}
+document.addEventListener('DOMContentLoaded', function () {
+    if (/Mobi|Android|iPhone|Windows Phone/i.test(navigator.userAgent)) {
+        document.body.innerHTML = "<h1>Access from mobile devices is restricted.</h1>";
+    } else {
+        console.log("Access granted to desktop users.");
+    }
+});
 
 
 
